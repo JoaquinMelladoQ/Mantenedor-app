@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 
 export default class UserForm extends Component {
+
+    state = {}
     handleChange = ({ target }) => {
-        console.log(target.name, target.value)
+        this.setState({
+            [target.name]: target.value,
+        })
     }
     render() {
         return(
