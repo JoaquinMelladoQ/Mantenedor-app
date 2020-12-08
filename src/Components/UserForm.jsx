@@ -9,6 +9,7 @@ export default class UserForm extends Component {
         })
     }
     render() {
+        console.log(this.state)
         return(
              <form>
                  <input name="name" onChange={this.handleChange} />
