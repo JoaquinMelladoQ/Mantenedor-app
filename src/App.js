@@ -8,14 +8,14 @@ class App extends Component {
 
     state = {
       ruta: 'lista',
-
     }
 
     render() {
+      const { ruta } = this.state
       return(
         <div className="App">
-          <ViewList />
-          <UserForm />
+          { ruta === 'lista' && <ViewList /> }
+          { ruta === 'formulario' && <UserForm /> }
         </div> 
       )
     }
