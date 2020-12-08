@@ -1,5 +1,19 @@
 import React, { Component } from 'react'
 
+
+const validate = values => {
+     const errors = {}
+    if (!values.name) {
+        errors.name = 'Este campo es obligatorio'
+    }
+    if (!values.email) {
+        errors.email = 'Este campo es obligatorio'
+    }
+    if (!values.website) {
+        errors.website = 'Este campo es obligatorio'
+    }
+     return errors
+}
 export default class UserForm extends Component {
 
     state = {
@@ -31,9 +45,9 @@ export default class UserForm extends Component {
                  <input placeholder="nombre" name="name" onChange={this.handleChange} />
                  {errors.name && <p>{errors.name}</p>}
                  <input placeholder="email" name="email" onChange={this.handleChange} />
-                 {errors.name && <p>{errors.name}</p>}
+                 {errors.email && <p>{errors.email}</p>}
                  <input placeholder="website" name="website" onChange={this.handleChange} />
-                 {errors.name && <p>{errors.name}</p>}
+                 {errors.website && <p>{errors.website}</p>}
                  <input type="submit" value="Enviar" />
              </form>
         )
