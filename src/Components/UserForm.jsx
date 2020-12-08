@@ -8,6 +8,12 @@ export default class UserForm extends Component {
             [target.name]: target.value,
         })
     }
+
+    handleSubmit = e => {
+        e.preventDefault()
+        e.target.reset()
+    }
+
     render() {
         
         return(
