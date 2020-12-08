@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import UserForm from './Components/UserForm';
-import ViewList from './Components/ViewList';
+import React, { Component } from 'react'
+import axios from 'axios'
+import logo from './logo.svg'
+import './App.css'
+import UserForm from './Components/UserForm'
+import ViewList from './Components/ViewList'
 
 class App extends Component {
 
@@ -12,6 +13,9 @@ class App extends Component {
 
     constructor() {
       super()
+
+      axios.get('https://jsonplaceholder.typicode.com/users')
+
     }
 
     render() {
