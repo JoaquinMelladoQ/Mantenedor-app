@@ -8,6 +8,7 @@ import ViewList from './Components/ViewList'
 class App extends Component {
 
     state = {
+      data: [],
       ruta: 'lista',
     }
 
@@ -15,10 +16,11 @@ class App extends Component {
       super()
 
       axios.get('https://jsonplaceholder.typicode.com/users')
-
+        .then(({ data }) => this.setState({ data }))
     }
 
     render() {
+      console.log(this.state)
       const { ruta } = this.state
       return(
         <div className="App">
