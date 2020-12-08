@@ -10,6 +10,10 @@ class App extends Component {
       ruta: 'lista',
     }
 
+    constructor() {
+      super()
+    }
+
     render() {
       const { ruta } = this.state
       return(
