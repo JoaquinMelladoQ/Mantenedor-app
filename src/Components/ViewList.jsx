@@ -8,7 +8,7 @@ export default class ViewList extends Component {
         return(
             <div>
                 <Cabecera />
-                <Lista />
+                <Lista data={data} />
             </div>
         )
     }
