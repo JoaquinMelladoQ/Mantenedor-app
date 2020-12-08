@@ -9,12 +9,13 @@ export default class UserForm extends Component {
         })
     }
     render() {
-        console.log(this.state)
+        
         return(
-             <form>
-                 <input name="name" onChange={this.handleChange} />
-                 <input name="email" onChange={this.handleChange} />
-                 <input name="website" onChange={this.handleChange} />
+             <form onSubmit={this.handleSubmit} >
+                 <input placeholder="nombre" name="name" onChange={this.handleChange} />
+                 <input placeholder="email" name="email" onChange={this.handleChange} />
+                 <input placeholder="website" name="website" onChange={this.handleChange} />
+                 <input type="submit" value="Enviar" />
              </form>
         )
     }
