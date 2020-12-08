@@ -4,6 +4,7 @@ import Lista from './Lista'
 
 export default class ViewList extends Component {
     render() {
+        const { data } = this.props
         return(
             <div>
                 <Cabecera />

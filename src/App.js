@@ -20,11 +20,10 @@ class App extends Component {
     }
 
     render() {
-      console.log(this.state)
-      const { ruta } = this.state
+      const { ruta, data } = this.state
       return(
         <div className="App">
-          { ruta === 'lista' && <ViewList /> }
+          { ruta === 'lista' && <ViewList data={data} /> }
           { ruta === 'formulario' && <UserForm /> }
         </div> 
       )
