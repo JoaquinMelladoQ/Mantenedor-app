@@ -49,7 +49,7 @@ class App extends Component {
 
 
     nuevoUsuario = () => {
-      this.setState({ ruta: 'formulario' })
+      this.setState({ ruta: 'formulario', usuarioSeleccionado: undefined })
     }
 
     render() {
@@ -63,8 +63,9 @@ class App extends Component {
             handleClick={this.seleccionaUsuario}  data={data} /> }
           { ruta === 'formulario' && <UserForm
            valoresIniciales={valoresIniciales || {}}
-           handleSubmit={this.agregarNuevoUsuario} /> }
+           handleSubmit={this.agregarNuevoUsuario} 
            handleUpdate={this.actualizarNuevoUsuario}
+           /> }
         </div> 
       )
     }
