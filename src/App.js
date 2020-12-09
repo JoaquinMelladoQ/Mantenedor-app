@@ -36,6 +36,11 @@ class App extends Component {
         })
     }
 
+    actualizarNuevoUsuario = (id, values) => {
+      axios.put(`https://jsonplaceholder.typicode.com/users/`)
+    }
+
+
     nuevoUsuario = () => {
       this.setState({ ruta: 'formulario' })
     }
@@ -52,6 +57,7 @@ class App extends Component {
           { ruta === 'formulario' && <UserForm
            valoresIniciales={valoresIniciales || {}}
            handleSubmit={this.agregarNuevoUsuario} /> }
+           handleUpdate={this.actualizarNuevoUsuario}
         </div> 
       )
     }
