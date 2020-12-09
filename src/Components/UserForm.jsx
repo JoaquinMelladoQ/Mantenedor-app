@@ -20,6 +20,14 @@ export default class UserForm extends Component {
         errors: {}
     }
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            ...this.state,
+            ...props.valoresIniciales,
+        }
+    }
+
     handleChange = ({ target }) => {
         this.setState({
             [target.name]: target.value,
