@@ -49,7 +49,9 @@ class App extends Component {
           { ruta === 'lista' && <ViewList
             nuevoUsuario={this.nuevoUsuario}
             handleClick={this.seleccionaUsuario}  data={data} /> }
-          { ruta === 'formulario' && <UserForm handleSubmit={this.agregarNuevoUsuario} /> }
+          { ruta === 'formulario' && <UserForm
+           valoresIniciales={valoresIniciales || {}}
+           handleSubmit={this.agregarNuevoUsuario} /> }
         </div> 
       )
     }
