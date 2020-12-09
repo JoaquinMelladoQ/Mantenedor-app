@@ -41,7 +41,9 @@ class App extends Component {
     }
 
     render() {
-      const { ruta, data } = this.state
+      const { ruta, data, usuarioSeleccionado } = this.state
+      const valoresIniciales = usuarioSeleccionado && data.find(x => x.id === usuarioSeleccionado)
+      console.log(valoresIniciales)
       return(
         <div className="App">
           { ruta === 'lista' && <ViewList
