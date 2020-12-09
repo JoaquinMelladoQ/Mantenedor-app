@@ -38,7 +38,6 @@ export default class UserForm extends Component {
         e.preventDefault()
         const { errors, ...sinErrors } = this.state
         const result = validate(sinErrors)
-        this.setState({ errors: result })
 
         if (!Object.keys(result).length) {
             const { handleSubmit, handleUpdate, valoresIniciales } = this.props
@@ -47,7 +46,8 @@ export default class UserForm extends Component {
             }else{
                 handleSubmit(sinErrors)
             }
-            e.target.reset()
+        } else {
+            this.setState({ errors: result })
         }
 
     }
