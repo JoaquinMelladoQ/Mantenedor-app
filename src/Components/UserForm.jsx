@@ -33,8 +33,12 @@ export default class UserForm extends Component {
         this.setState({ errors: result })
 
         if (!Object.keys(result).length) {
-            const { handleSubmit, valoresIniciales } = this.props
-            handleSubmit(sinErrors)
+            const { handleSubmit, handleUpdate, valoresIniciales } = this.props
+            if (valoresIniciales.id) {
+                handleUpdate(valoresIniciales.id, sinErrors)   
+            }else{
+                handleSubmit(sinErrors)
+            }
             e.target.reset()
         }
 
