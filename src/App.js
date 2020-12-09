@@ -37,7 +37,14 @@ class App extends Component {
     }
 
     actualizarNuevoUsuario = (id, values) => {
-      axios.put(`https://jsonplaceholder.typicode.com/users/`)
+      axios.put(`https://jsonplaceholder.typicode.com/users/${id}`, values)
+        .then(() => {
+          const newData = this.state.data.map(x => x.id === id ? values : x)
+          this.setState({
+            data: newData,
+            ruta: 'lista'
+          })
+        })
     }
 
 
