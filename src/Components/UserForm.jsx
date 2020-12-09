@@ -31,8 +31,9 @@ export default class UserForm extends Component {
         const { errors, ...sinErrors } = this.state
         const result = validate(sinErrors)
         this.setState({ errors: result })
+
         if (!Object.keys(result).length) {
-            const { handleSubmit } = this.props
+            const { handleSubmit, valoresIniciales } = this.props
             handleSubmit(sinErrors)
             e.target.reset()
         }
